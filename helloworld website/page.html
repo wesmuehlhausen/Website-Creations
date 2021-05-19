@@ -3,31 +3,20 @@
 
    <head>
       <title>Max Lift Calculator</title>
-      <link rel="stylesheet" href="page_style.css"
+      <link rel="stylesheet" href="page_style.css">
+      <script type="text/javascript"  src="page_script.js"></script>
    </head>
 	
    <body>
-    <!--   
-    <table background = "recources/weights2.png" width = "100%" height = "100">
-        <tr>
-            <td>
-                <center>
-                    <h1>Max Lift Calculator</h1>
-                </center>
-            </td>
-        </tr>
-    </table>
-    -->
-    <center>
-        <h1>Max Lift Calculator</h1>
-    </center>
+
+    <h1>Max Lift Calculator</h1>
 
     <hr />
     <h3>Instructions: </h3>
-    <p align = "left" size="4">Wondering how you stack up against other people in your age/weight category? Trying to know what your one rep max is based on what you've already done? Fill out the following data values and then hit calculate:</p>
+    <p allign="left" size="4">Wondering how you stack up against other people in your age/weight category? Trying to know what your one rep max is based on what you've already done? Fill out the following data values and then hit calculate:</p>
     
     <label id="l1">Age</label>
-    <input >
+    <input >  
     <label>Yrs</label><br><br>
     
     <label id="l2">Bodyweight </label>
@@ -51,11 +40,11 @@
     <input><br><br>
     
     
-    <button id="b1">CALCULATE</button>
+    <button onclick="calculate()" id="b1">CALCULATE</button>
     <hr />
 
     <label>Maximum 1RM Weight</label><br><br>
-    <input value="0" readonly>
+    <input id="l6" value="0" readonly>
     <label>Lbs</label><br><br>
 
     <label>You are stronger than</label>
