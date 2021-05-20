@@ -21,8 +21,11 @@ function calculate() {
         document.getElementById("l6").value = "Error";//to set the final value
     }
 
-    if(wgt > 310 || wgt < 110){
+    if(wgt <= 310 || wgt >= 110){
         //find where in the range it is and report based on that
+        var adj_wgt = (Math.round(wgt / 10) * 10);
+        var index = ((adj_wgt / 10) - 10);//find the valid index for given weight
+        document.getElementById("strlvl").innerHTML = darray[3].BW.value;// FIX Get value from darray to work
     }
     else{
         document.getElementById("wgt").value = "Enter weight from 110-310Lbs";
