@@ -4,10 +4,15 @@ var data = xlsx.readFile("lifting_standards_data.xlsx");
 var wsheet = data.Sheets["standards"];
 var darray = xlsx.utils.sheet_to_json(wsheet);
 //console.log(darray);//print all contents in the database
-//console.log(darray[3].BW); //yields 140 from the data sheet
+var out = darray[3].BW;
+console.log(out); //yields 140 from the data sheet
+console.log(out.toString());
+var x = out + 3
+var tmp = JSON.stringify(darray[3]);
 
 function calculate() {
-
+    
+    
     var lft = parseInt(document.getElementById("lft").value);
     var rps = parseInt(document.getElementById("rps").value);
     var wgt = parseInt(document.getElementById("wgt").value);
@@ -20,17 +25,23 @@ function calculate() {
     else{//if valid numbers not set
         document.getElementById("l6").value = "Error";//to set the final value
     }
+    
+    document.getElementById("l6").value = tmp;
+    document.getElementById("strlvl").innerHTML = tmp;
+    
+    
 
+    /*
     if(wgt <= 310 || wgt >= 110){
         //find where in the range it is and report based on that
         var adj_wgt = (Math.round(wgt / 10) * 10);
         var index = ((adj_wgt / 10) - 10);//find the valid index for given weight
-        document.getElementById("strlvl").innerHTML = darray[3].BW.value;// FIX Get value from darray to work
+        document.getElementById("strlvl").innerHTML = darray[3].BW;// FIX Get value from darray to work
     }
     else{
         document.getElementById("wgt").value = "Enter weight from 110-310Lbs";
     }
-
+    */
     
     
     //document.getElementById("wgt").value = (Math.round(wgt / 10) * 10);//to set the final value
