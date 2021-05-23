@@ -1,3 +1,10 @@
+// -Wesley Muehlhausen
+// -Weight Lifting One Rep Max Calculator
+// -Javascript implementation for calculating values
+// -This program inputs personal info such as weight, 
+//  age, weight and reps of a lift to determine your 
+//  theoretical one rep max
+
 //import lifting data from database
 var xlsx = require("xlsx");
 var data = xlsx.readFile("lifting_standards_data.xlsx");
