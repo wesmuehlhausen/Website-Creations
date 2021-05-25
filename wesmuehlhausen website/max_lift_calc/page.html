@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Max Lift Calculator</title>
+      <link rel="stylesheet" href="page_style.css">
+      <script type="text/javascript"  src="page_script.js"></script>
+   </head>
+	
+   <body>
+
+    <h1>Max Lift Calculator</h1>
+
+    <hr />
+    <h3>Instructions: </h3>
+    <p allign="left" size="4">Wondering how you stack up against other people in your age/weight category? Trying to know what your one rep max is based on what you've already done? Fill out the following data values and then hit calculate:</p>
+    
+    <label id="l1">Age</label>
+    <input >  
+    <label>Yrs</label><br><br>
+    
+    <label id="l2">Bodyweight </label>
+    <input id="wgt">
+    <label>Lbs</label><br><br>
+    
+    <label id="l3">Lift Type </label>
+    <select >
+        <option >Barbell Bench Press</option>
+        <option >Conventional Deadlift</option>
+        <option >Front Squat</option>
+        <option >Back Squat</option>
+        <option >Barbell Shoulder Press</option>
+    </select><br><br>
+
+    <label id="l4">Lift </label>
+    <input id="lft" type="number">
+    <label>Lbs</label><br><br>
+    
+    <label id="l5">Reps</label>
+    <input id="rps" type="number"><br><br>
+    
+    
+    <button onclick="calculate()" id="b1">CALCULATE</button>
+    <hr />
+
+    <label>Maximum 1RM Weight</label><br><br>
+    <input id="l6" value="0" readonly>
+    <label>Lbs</label><br><br>
+
+    <!--
+    <label>You are stronger than</label>
+    <label id="strlvl">0%</label>
+    <label>of people in your age/weight category</label>
+    <br><br>
+    -->
+
+   </body>
+	
+</html>
