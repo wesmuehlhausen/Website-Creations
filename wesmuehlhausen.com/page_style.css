@@ -1,0 +1,19 @@
+
+/* Classes */
+.tab_bar {
+    color: blueviolet; 
+}
+
+.tab_link {
+    color:black;
+}
+
+.tab_content {
+    color: black;
+}
+
+
+/* Style by ID */
+#code {
+    color: blue;
+}
