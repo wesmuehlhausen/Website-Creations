@@ -20,7 +20,7 @@ function tab_clicked(page_id, element, color){
     //Add Background to selected tab
     element.style.backgroundColor = color;
 
-    //Default open
+    //Dmefault open
     document.getElementById("defaultOpen").click();
 
 }
