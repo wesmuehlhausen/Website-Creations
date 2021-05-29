@@ -4,7 +4,29 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: Arial;
+    background-color: red;
+    
   }
+
+#home_tab{
+    background-color: red;
+    color: white;
+}
+
+#code_tab{
+    background-color: white;
+    color: black;
+}
+
+#cont_tab{
+    background-color: white;
+    color: black;
+}
+
+#proj_tab{
+    background-color: white;
+}
+
 
 /* Style tab links */
 .tabs {
@@ -18,3 +40,41 @@ body, html {
     font-size: 17px;
     width: 25%;
   }
+
+  .content {
+    color: white;
+    padding: 100px 20px;
+  }
+
+  .fade-in-image {
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
