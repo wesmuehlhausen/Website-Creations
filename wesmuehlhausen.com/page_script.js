@@ -1,26 +1,17 @@
-function tab_clicked(page_id, element, color){
-    // init variables
-    var index, tab_content, tab_link;
+function click_tab(val, rgb){
+    
+    var tab = document.getElementById(val);
+    // tab.innerHTML = "haha";
 
-    // hide the contents of the other pages
-    tab_content = document.getElementsByClassName("tab_content");
-    for(index = 0; index < tab_content.length; index++){
-        tab_content[index].style.display = "none";
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabs");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.backgroundColor = "white";
     }
 
-    //clear other tabs background color
-    tab_link = document.getElementsByClassName("tab_link");
-    for(index = 0; index < tab_content.length; index++){
-        tab_link[index].style.backgroundColor = "";
-    }
-
-    //Show content of only the selected tab
-    document.getElementById(page_id).style.display = "block";
-
-    //Add Background to selected tab
-    element.style.backgroundColor = color;
-
-    //Dmefault open
-    document.getElementById("defaultOpen").click();
+    tab.style.backgroundColor = rgb;
+    document.body.style.backgroundColor = rgb;
+    
 
 }
+

@@ -1,19 +1,20 @@
 
-/* Classes */
-.tab_bar {
-    color: blueviolet; 
-}
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  }
 
-.tab_link {
-    color:black;
-}
-
-.tab_content {
-    color: black;
-}
-
-
-/* Style by ID */
-#code {
-    color: blue;
-}
+/* Style tab links */
+.tabs {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+  }
