@@ -3,7 +3,7 @@ function click_tab(val, rgb){
     var tab = document.getElementById(val);
     // tab.innerHTML = "haha";
 
-    //color all other tabs white
+    //color all otherr tabs white
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabs");
     for (i = 0; i < tabcontent.length; i++) {
