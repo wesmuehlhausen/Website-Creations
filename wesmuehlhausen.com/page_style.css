@@ -1,30 +1,54 @@
+@font-face { font-family: spotify; src: url('fonts/CircularSpotifyTxT-Black.ttf'); }
+
+
+
+
 
 /* Set height of body and the document to 100% to enable "full page tabs" */
 body, html {
     height: 100%;
     margin: 0;
-    font-family: Arial;
-    background-color: red;
-    
+    background-color: black;
+    font-family: spotify;
   }
 
+  #particles-js{
+      width: 100%;
+      height: 100%;
+  }
+
+#welcome{
+    font-family: spotify;
+    color: rgb(150, 12, 12);
+    position: absolute;
+    user-select: none;
+    left: 100px;
+    top: 150px;
+    font-size: 100px;
+}
+
 #home_tab{
-    background-color: red;
+    background-color: black;
     color: white;
+    font-family: spotify;
 }
 
 #code_tab{
     background-color: white;
     color: black;
+    font-family: spotify;
 }
 
 #cont_tab{
     background-color: white;
     color: black;
+    font-family: spotify;
 }
 
 #proj_tab{
     background-color: white;
+    color: black;
+    font-family: spotify;
 }
 
 
@@ -39,6 +63,8 @@ body, html {
     padding: 14px 16px;
     font-size: 17px;
     width: 25%;
+    user-select: none;
+    border: 1px solid white;
   }
 
   .content {
@@ -46,35 +72,108 @@ body, html {
     padding: 100px 20px;
   }
 
-  .fade-in-image {
-    animation: fadeIn 5s;
-    -webkit-animation: fadeIn 5s;
-    -moz-animation: fadeIn 5s;
-    -o-animation: fadeIn 5s;
-    -ms-animation: fadeIn 5s;
+
+/*Fade in text */
+
+  .fade-in {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+    -o-animation: fadeIn ease 3s;
+    -ms-animation: fadeIn ease 3s;
   }
   @keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
   }
   
   @-moz-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
   }
   
   @-webkit-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
   }
   
   @-o-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
   }
   
   @-ms-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
   }
+}
 
+.fade-out {
+    animation: fadeOut ease 8s;
+    -webkit-animation: fadeOut ease 8s;
+    -moz-animation: fadeOut ease 8s;
+    -o-animation: fadeOut ease 8s;
+    -ms-animation: fadeOut ease 8s;
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-moz-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-webkit-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-o-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-ms-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+  }
