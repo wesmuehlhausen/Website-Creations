@@ -17,7 +17,31 @@
     <body>
 
         <div id="particles-js">
-            <h1 id="welcome" class="fade-in">Welcome</h1>
+            <h1 id="welcome"  class="fade-out-welcome">Welcome</h1>
+            <div class="tabs fade-in">
+                <button id="home-button" class="tab-button" onclick="openTab('home-button', 'home-content')">Home</button>
+                <button id="about-button" class="tab-button" onclick="openTab('about-button', 'about-content')">About Me</button>
+                <button id="proj-button" class="tab-button" onclick="openTab('proj-button', 'proj-content')">Projects</button>
+                <button id="code-button" class="tab-button" onclick="openTab('code-button', 'code-content')">Code</button>
+
+            </div>
+            <div id="home-content" class="tab-content fade-in" >
+                <h3 id="home-heading">Home</h3>
+                <p id="home-text">Welcome to my humble abode</p>
+            </div>
+            <div id="about-content" class="tab-content">
+                <h3 id="about-heading">About Me</h3>
+                <p id="about-text">Whatchu looking at willis</p>
+            </div>
+            <div id="proj-content" class="tab-content">
+                <h3 id="proj-heading">Projects</h3>
+                <p id="proj-text">Here's all my cool stuff</p>
+            </div>
+            <div id="code-content" class="tab-content">
+                <h3 id="code-heading">Code</h3>
+                <p id="code-text">Take a look behind the scenes</p>
+            </div>
+
         </div>
 
         <script type="text/javascript" src="particles.js"></script>
@@ -26,13 +50,7 @@
 
 
 <!--
-        <div class="tab_bar">
-               
-            <button onclick="click_tab('home_tab', 'red')" id="home_tab" class="tabs">Home</button>
-            <button onclick="click_tab('code_tab', 'green')"  id="code_tab" class="tabs">Code</button>
-            <button onclick="click_tab('cont_tab', 'blue')" id="cont_tab" class="tabs">Contact</button>
-            <button onclick="click_tab('proj_tab', 'orange')" id="proj_tab" class="tabs">Projects</button>            
-        </div> 
+ 
         <h1 id="test1">
                 Welcome
         </h1>

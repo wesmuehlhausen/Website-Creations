@@ -5,11 +5,14 @@
 
 
 /* Set height of body and the document to 100% to enable "full page tabs" */
+
 body, html {
     height: 100%;
     margin: 0;
     background-color: black;
     font-family: spotify;
+    overflow: hidden;
+    
   }
 
   #particles-js{
@@ -26,6 +29,93 @@ body, html {
     top: 150px;
     font-size: 100px;
 }
+
+.tabs {
+    
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+  }
+
+.tab-button {
+    background-color: transparent;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+    font-family: spotify;
+    border: 1px solid grey;
+}
+
+.tab-button:hover {
+    background-color: grey;
+    transition: 0.5s;
+}
+
+.tab-content {
+    background-color: white;
+    margin:auto;
+    width: 50%;
+    height: 0px;
+    left: 25%;
+    top:10%;
+    position: absolute;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    display: none;
+    
+    
+}
+
+#home-heading {
+    font-size: 100px;
+    color: rgb(150, 12, 12);
+    user-select: none;
+}
+
+#home-text {
+    user-select: none;
+}
+ 
+#home-content{
+    display: block;
+    
+}
+/*
+#about-content{
+    visibility: hidden;
+}
+
+#code-content{
+    visibility: hidden;
+}
+
+#proj-content{
+    visibility: hidden;
+} */
+
+#home-button{
+    color: rgb(150, 12, 12);
+}
+
+/*
+
+    
+    color: white;
+    
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+    user-select: none;
+    border: 1px solid white;
 
 #home_tab{
     background-color: black;
@@ -52,128 +142,48 @@ body, html {
 }
 
 
-/* Style tab links */
-.tabs {
-    background-color: #555;
-    color: white;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 25%;
-    user-select: none;
-    border: 1px solid white;
-  }
+
+
 
   .content {
     color: white;
     padding: 100px 20px;
   }
+*/
 
-
-/*Fade in text */
-
-  .fade-in {
-    animation: fadeIn ease 3s;
-    -webkit-animation: fadeIn ease 3s;
-    -moz-animation: fadeIn ease 3s;
-    -o-animation: fadeIn ease 3s;
-    -ms-animation: fadeIn ease 3s;
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-  
-  @-moz-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-  
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-  
-  @-o-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-  
-  @-ms-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-  }
+/*Fade out welcome text */
+.fade-out-welcome {
+    
+    -webkit-animation: fadeinout 3s linear forwards;
+    animation: fadeinout 3s linear forwards;
 }
 
-.fade-out {
-    animation: fadeOut ease 8s;
-    -webkit-animation: fadeOut ease 8s;
-    -moz-animation: fadeOut ease 8s;
-    -o-animation: fadeOut ease 8s;
-    -ms-animation: fadeOut ease 8s;
-  }
-  @keyframes fadeOut {
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
-  }
-  
-  @-moz-keyframes fadeOut {
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
-  }
-  
-  @-webkit-keyframes fadeOut {
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
-  }
-  
-  @-o-keyframes fadeOut {
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-    }
-  }
-  
-  @-ms-keyframes fadeOut {
-    0% {
-      opacity:1;
-    }
-    100% {
-      opacity:0;
-  }
+@-webkit-keyframes fadeinout {
+  0% { opacity: 1; }
+  30% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes fadeinout {
+  0% { opacity: 1; }
+  30% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/*Fade in text */
+.fade-in {
+    -webkit-animation: fadein 5s linear forwards;
+    animation: fadein 5s linear forwards;
+}
+
+@-webkit-keyframes fadein {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
