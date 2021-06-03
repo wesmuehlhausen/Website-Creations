@@ -11,9 +11,23 @@ body, html {
     margin: 0;
     background-color: black;
     font-family: spotify;
-    overflow: hidden;
+    /* overflow: hidden; */
     
   }
+
+  a {
+      color:rgb(150, 12, 12);
+  }
+
+#igit {
+    width:100px;
+    height:100px;
+}
+
+#iln {
+    width:100px;
+    height:100px;
+}
 
   #particles-js{
       width: 100%;
@@ -72,7 +86,7 @@ body, html {
     
 }
 
-#home-heading {
+h3 {
     font-size: 100px;
     color: rgb(150, 12, 12);
     user-select: none;
@@ -185,5 +199,22 @@ body, html {
 @keyframes fadein {
   0% { opacity: 0; }
   50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.click-in {
+    -webkit-animation: clickin 2s linear forwards;
+    animation: clickin 2s linear forwards;
+}
+
+@-webkit-keyframes clickin {
+  0% { opacity: 0; }
+  50% { opacity: 0.75; }
+  100% { opacity: 1; }
+}
+
+@keyframes clickin {
+  0% { opacity: 0; }
+  50% { opacity: 0.75; }
   100% { opacity: 1; }
 }
