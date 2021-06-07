@@ -11,7 +11,6 @@ body, html {
     margin: 0;
     background-color: black;
     font-family: spotify;
-    /* overflow: hidden; */
     
   }
 
@@ -19,15 +18,74 @@ body, html {
       color:rgb(150, 12, 12);
   }
 
+/* width */
+::-webkit-scrollbar {
+    display: none;
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #888;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(150, 12, 12);
+  }
+
+.src-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.src-img:hover {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;
+            
+    }
+  }
+
+
 #igit {
-    width:100px;
-    height:100px;
+    width:50px;
+    height:50px;
+    padding: 25px;
+    
+    
 }
 
 #iln {
-    width:100px;
-    height:100px;
+    width:50px;
+    height:50px;
+    padding: 25px;
 }
+
+#igl {
+    width:50px;
+    height:50px;
+    padding: 25px;
+}
+
 
   #particles-js{
       width: 100%;
