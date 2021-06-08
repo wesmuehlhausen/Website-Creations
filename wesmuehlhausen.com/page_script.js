@@ -12,11 +12,10 @@ function openTab(tab_id, content) {
     }
     document.getElementById(tab_id).style.color = "rgb(150, 12, 12)";
     document.getElementById(content).style.display = "block";
-
-    // Show the specific tab content
-    //document.getElementById(tab_id).style.display = "block";
-
 }
+
+
+
 
 
 

@@ -40,51 +40,41 @@ body, html {
     background: rgb(150, 12, 12);
   }
 
+
+
+
+
+/*---------- ABOUT ME ICONS --------------------------------------------------------------- */
+
+
+
 .src-img {
-    display: block;
+    display: inline;
     margin-left: auto;
     margin-right: auto;
+    width:8%;
+    height:8%;
+    padding: 3%;
+    transition: 1s;
+    border-radius: 15%;
+
 }
 
-.src-img:hover {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    position: relative;
-    animation-name: example;
-    animation-duration: 4s;
+
+#igit:hover {
+  background-color: rgba(74, 0, 111, 0.529);
+}
+#iln:hover {
+  background-color: rgba(128, 0, 0, 0.549);
 }
 
-@keyframes example {
-    0%   {background-color:red; left:0px; top:0px;}
-    25%  {background-color:yellow; left:200px; top:0px;}
-    50%  {background-color:blue; left:200px; top:200px;}
-    75%  {background-color:green; left:0px; top:200px;}
-    100% {background-color:red; left:0px; top:0px;
-            
-    }
-  }
-
-
-#igit {
-    width:50px;
-    height:50px;
-    padding: 25px;
-    
-    
+#igl:hover {
+  background-color: rgba(118, 118, 118, 0.679);
 }
 
-#iln {
-    width:50px;
-    height:50px;
-    padding: 25px;
-}
 
-#igl {
-    width:50px;
-    height:50px;
-    padding: 25px;
-}
+
+
 
 
   #particles-js{
@@ -113,7 +103,6 @@ body, html {
     background-color: transparent;
     color: white;
     float: left;
-    border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
@@ -130,7 +119,7 @@ body, html {
 
 .tab-content {
     background-color: white;
-    margin:auto;
+    /* margin:auto; */
     width: 50%;
     height: 0px;
     left: 25%;
@@ -150,6 +139,10 @@ h3 {
     user-select: none;
 }
 
+p {
+  padding: 0px;
+}
+
 #home-text {
     user-select: none;
 }
@@ -158,18 +151,7 @@ h3 {
     display: block;
     
 }
-/*
-#about-content{
-    visibility: hidden;
-}
 
-#code-content{
-    visibility: hidden;
-}
-
-#proj-content{
-    visibility: hidden;
-} */
 
 #home-button{
     color: rgb(150, 12, 12);
