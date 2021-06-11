@@ -57,19 +57,21 @@ body, html {
     padding: 3%;
     transition: 1s;
     border-radius: 15%;
+    color: transparent;
 
 }
 
 
 #igit:hover {
   background-color: rgba(74, 0, 111, 0.529);
+  
 }
 #iln:hover {
-  background-color: rgba(128, 0, 0, 0.549);
+  background-color: rgba(118, 118, 118, 0.679);
 }
 
 #igl:hover {
-  background-color: rgba(118, 118, 118, 0.679);
+  background-color: rgba(128, 0, 0, 0.549);
 }
 
 
@@ -131,6 +133,14 @@ body, html {
     display: none;
     
     
+}
+
+.aleft {
+  text-align: left;
+}
+
+.noUl {
+  color: transparent;
 }
 
 h3 {
