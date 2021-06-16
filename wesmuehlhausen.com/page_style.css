@@ -1,11 +1,8 @@
+/* IMPORTED SPOTIFY FONT --------------------------------------------------------------- */
 @font-face { font-family: spotify; src: url('fonts/CircularSpotifyTxT-Black.ttf'); }
 
-
-
-
-
+/* GLOBAL WEBSITE STYLING --------------------------------------------------------------- */
 /* Set height of body and the document to 100% to enable "full page tabs" */
-
 body, html {
     height: 100%;
     margin: 0;
@@ -14,39 +11,100 @@ body, html {
     
   }
 
-  a {
-      color:rgb(150, 12, 12);
-  }
+a {
+    color:rgb(150, 12, 12);
+}
+
+h3 {
+  font-size: 100px;
+  color: rgb(150, 12, 12);
+  user-select: none;
+}
+
+p {
+padding: 0px;
+}
+
+#home-text {
+  user-select: none;
+}
+
+#home-content{
+  display: block;
+  
+}
+
+#home-button{
+  color: rgb(150, 12, 12);
+}
 
 /* width */
 ::-webkit-scrollbar {
     display: none;
     width: 10px;
-  }
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #888;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(150, 12, 12);
+}
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+}
+
+.tabs {
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #888;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(150, 12, 12);
-  }
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+}
 
+.tab-button {
+  background-color: transparent;
+  color: white;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+  font-family: spotify;
+  border: 1px solid grey;
+}
 
+.tab-button:hover {
+  background-color: grey;
+  transition: 0.5s;
+}
 
+.tab-content {
+  background-color: white;
+  width: 50%;
+  height: 0px;
+  left: 25%;
+  top:10%;
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  display: none;
 
+}
 
-/*---------- ABOUT ME ICONS --------------------------------------------------------------- */
-
-
+/* ABOUT ME STYLING--------------------------------------------------------------- */
 
 .src-img {
     display: inline;
@@ -61,7 +119,6 @@ body, html {
 
 }
 
-
 #igit:hover {
   background-color: rgba(74, 0, 111, 0.529);
   
@@ -74,67 +131,6 @@ body, html {
   background-color: rgba(128, 0, 0, 0.549);
 }
 
-
-
-
-
-
-  #particles-js{
-      width: 100%;
-      height: 100%;
-  }
-
-#welcome{
-    font-family: spotify;
-    color: rgb(150, 12, 12);
-    position: absolute;
-    user-select: none;
-    left: 100px;
-    top: 150px;
-    font-size: 100px;
-}
-
-.tabs {
-    
-    background-color: transparent;
-    position: absolute;
-    width: 100%;
-  }
-
-.tab-button {
-    background-color: transparent;
-    color: white;
-    float: left;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 25%;
-    font-family: spotify;
-    border: 1px solid grey;
-}
-
-.tab-button:hover {
-    background-color: grey;
-    transition: 0.5s;
-}
-
-.tab-content {
-    background-color: white;
-    /* margin:auto; */
-    width: 50%;
-    height: 0px;
-    left: 25%;
-    top:10%;
-    position: absolute;
-    color: white;
-    text-align: center;
-    font-size: 25px;
-    display: none;
-    
-    
-}
-
 .aleft {
   text-align: left;
 }
@@ -143,78 +139,30 @@ body, html {
   color: transparent;
 }
 
-h3 {
-    font-size: 100px;
-    color: rgb(150, 12, 12);
-    user-select: none;
+
+/* PROJECTS STYLING -------------------------------------------------------------- */
+.proj-block {
+  border: 1px solid rgb(0, 255, 179);
+  display: block;
+  
 }
 
-p {
+.proj-text {
+  width:42%;
   padding: 0px;
+  
 }
 
-#home-text {
-    user-select: none;
-}
- 
-#home-content{
-    display: block;
-    
+.test{
+  
+  position: absolute;
 }
 
-
-#home-button{
-    color: rgb(150, 12, 12);
+#proj-container {
+  padding-bottom: 250px;
 }
 
-/*
-
-    
-    color: white;
-    
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 25%;
-    user-select: none;
-    border: 1px solid white;
-
-#home_tab{
-    background-color: black;
-    color: white;
-    font-family: spotify;
-}
-
-#code_tab{
-    background-color: white;
-    color: black;
-    font-family: spotify;
-}
-
-#cont_tab{
-    background-color: white;
-    color: black;
-    font-family: spotify;
-}
-
-#proj_tab{
-    background-color: white;
-    color: black;
-    font-family: spotify;
-}
-
-
-
-
-
-  .content {
-    color: white;
-    padding: 100px 20px;
-  }
-*/
-
+/* ANIMATIONS --------------------------------------------------------------- */
 /*Fade out welcome text */
 .fade-out-welcome {
     
