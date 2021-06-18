@@ -154,8 +154,10 @@ padding: 0px;
 }
 
 .test{
-  
+  left: 50px;
+  top: 200px;
   position: absolute;
+  z-index: -1000;
 }
 
 #proj-container {
