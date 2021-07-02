@@ -8,6 +8,7 @@ body, html {
     margin: 0;
     background-color: black;
     font-family: spotify;
+    min-width: 700px;
     
   }
 
@@ -36,6 +37,7 @@ padding: 0px;
 
 #home-button{
   color: rgb(150, 12, 12);
+  overflow: hidden;
 }
 
 /* width */
@@ -62,7 +64,8 @@ padding: 0px;
 
 #particles-js{
   width: 100%;
-  height: 100%;
+  height: 200%;
+  overflow: hidden;
 }
 
 .tabs {
@@ -141,27 +144,33 @@ padding: 0px;
 
 
 /* PROJECTS STYLING -------------------------------------------------------------- */
+
 .proj-block {
-  border: 1px solid rgb(0, 255, 179);
-  display: block;
-  
-}
-
-.proj-text {
-  width:42%;
+  border: 1px solid grey;
+  display: flex;
+  border-radius: 10px;
+  font-size: 17px;
   padding: 0px;
-  
+}
+.proj-item {
+  padding: 0px;
+  vertical-align: middle;
 }
 
-.test{
-  left: 50px;
-  top: 200px;
-  position: absolute;
-  z-index: -1000;
+.proj-img{
+  padding: 0px;
+  width: 50%;
 }
 
-#proj-container {
-  padding-bottom: 250px;
+.proj-txt{
+  padding: 0px;
+}
+
+h4{
+  font-size: 24px;
+  color: rgb(150, 12, 12);
+  padding: none;
+
 }
 
 /* ANIMATIONS --------------------------------------------------------------- */
@@ -217,4 +226,20 @@ padding: 0px;
   0% { opacity: 0; }
   50% { opacity: 0.75; }
   100% { opacity: 1; }
+}
+
+/* @media (min-width: 750px) {
+  .proj-text {color: blue;}
+
+}
+
+@media (max-width: 750px) {
+  .proj-text {color: greenyellow;}
+} */
+
+@media (max-width: 1000px) {
+  .proj-img {display: none;}
+}
+@media (min-width: 1000px) {
+  .proj-img {display: inline;}
 }

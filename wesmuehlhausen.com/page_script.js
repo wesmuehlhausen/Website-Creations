@@ -22,9 +22,6 @@ function openTab(tab_id, content) {
 
 
 
-
-
-
 // function click_tab(tab_id), rgb){
     
 //     var tab = document.getElementById(tab_id);
