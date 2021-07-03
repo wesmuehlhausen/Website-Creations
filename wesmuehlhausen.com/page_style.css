@@ -90,8 +90,8 @@ p {
 }
 
 .tab-button:hover {
-  background-color: grey;
-  transition: 0.5s;
+  background-image: linear-gradient(to top, rgba(34, 34, 34, .40), rgba(34, 34, 34, 1));
+  transition: all 0.5s ease-in;
 }
 
 .tab-content {
@@ -162,7 +162,7 @@ p {
 .proj-block:hover {
   /* background-color: rgba(34, 34, 34, .85); */
   background-image: linear-gradient(rgba(34, 34, 34, .40), rgba(34, 34, 34, 1));
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in;
   border: 1px solid rgb(150, 12, 12);
 }
 
