@@ -23,7 +23,7 @@ h3 {
 }
 
 p {
-padding: 0px;
+  padding: 0px;
 }
 
 #home-text {
@@ -86,6 +86,7 @@ padding: 0px;
   width: 25%;
   font-family: spotify;
   border: 1px solid grey;
+  user-select: none;
 }
 
 .tab-button:hover {
@@ -109,6 +110,10 @@ padding: 0px;
 
 /* ABOUT ME STYLING--------------------------------------------------------------- */
 
+#about-text{
+  user-select: none;
+}
+
 .src-img {
     display: inline;
     margin-left: auto;
@@ -119,7 +124,7 @@ padding: 0px;
     transition: 1s;
     border-radius: 15%;
     color: transparent;
-
+    user-select: none;
 }
 
 #igit:hover {
@@ -147,23 +152,47 @@ padding: 0px;
 
 .proj-block {
   border: 1px solid grey;
-  display: flex;
+  /* display: flex; */
   border-radius: 10px;
   font-size: 17px;
   padding: 0px;
-}
-.proj-item {
-  padding: 0px;
-  vertical-align: middle;
+  user-select: none;
 }
 
+.proj-block:hover {
+  /* background-color: rgba(34, 34, 34, .85); */
+  background-image: linear-gradient(rgba(34, 34, 34, .40), rgba(34, 34, 34, 1));
+  transition: all 0.5s ease;
+  border: 1px solid rgb(150, 12, 12);
+}
+
+
 .proj-img{
+  display: block;
   padding: 0px;
   width: 50%;
+  height: auto;
+
 }
 
 .proj-txt{
   padding: 0px;
+  text-align: left;
+  padding-left: 5%;
+  padding-right: 5%;
+  user-select: none;
+}
+
+#proj-heading {
+  padding: none;
+}
+
+#proj-subhead{
+  position: absolute;
+  left: 0%;
+  top:100%;
+  text-align: center;
+
 }
 
 h4{
@@ -172,6 +201,51 @@ h4{
   padding: none;
 
 }
+
+/* .proj-container {
+  border: 1px solid grey;
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.proj-image {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+  
+}
+
+.proj-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.proj-container:hover .proj-overlay {
+  opacity: 1;
+}
+
+.proj-text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+} */
 
 /* ANIMATIONS --------------------------------------------------------------- */
 /*Fade out welcome text */
@@ -237,9 +311,27 @@ h4{
   .proj-text {color: greenyellow;}
 } */
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   .proj-img {display: none;}
 }
 @media (min-width: 1000px) {
   .proj-img {display: inline;}
+} */
+
+/*Fade in text */
+.proj-sub-fade-in {
+  -webkit-animation: proj-fade 5s linear forwards;
+  animation: proj-fade 5s linear forwards;
+}
+
+@-webkit-keyframes proj-fade {
+0% { opacity: 1; }
+50% { opacity: .75; }
+100% { opacity: 0;}
+}
+
+@keyframes proj-fade {
+0% { opacity: 1; }
+50% { opacity: .75; }
+100% { opacity: 0; }
 }
