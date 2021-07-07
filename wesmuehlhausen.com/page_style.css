@@ -202,50 +202,33 @@ h4{
 
 }
 
-/* .proj-container {
+.img-src{
+  color: white;
+  text-decoration: none;
+}
+
+/* CODE TAB --------------------------------------------------------------- */
+#code-text{
+  text-align: left;
+  user-select: none;
+}
+
+#profile-img{
+  width: 100%;
+  height: auto;
   border: 1px solid grey;
   border-radius: 10px;
-  position: relative;
-  width: 100%;
-  text-align: center;
 }
 
-.proj-image {
-  display: block;
-  margin: 0 auto;
-  width: 50%;
+#profile-img:hover{
+  transform:scale(1.5);
   height: auto;
-  
+  border: 1px solid rgb(150, 12, 12);
+  border-radius: 10px;
+  transition: all 0.5s ease-out;
 }
 
-.proj-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-}
 
-.proj-container:hover .proj-overlay {
-  opacity: 1;
-}
-
-.proj-text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-} */
 
 /* ANIMATIONS --------------------------------------------------------------- */
 /*Fade out welcome text */

@@ -16,36 +16,23 @@ function openTab(tab_id, content) {
 
 /////////////////////////////////////////////////////////////////////////////
 
+document.onmousemove = handleMouseMove;
 
+function handleMouseMove(event) {
+  const height = window.innerHeight;
+  const width = window.innerWidth;
+  // Creates angles of (-20, -20) (left, bottom) and (20, 20) (right, top)
+  const yAxisDegree = event.pageX / width * 40 - 20;
+  const xAxisDegree = event.pageY / height * -1 * 40 + 20;
+  target.style.transform = `rotateY(${yAxisDegree}deg) rotateX(${xAxisDegree}deg)`;
+  // Set the sheen position
+  setSheenPosition(event.pageX / width, event.pageY / width);
+}
 
-
-
-
-
-// function click_tab(tab_id), rgb){
-    
-//     var tab = document.getElementById(tab_id);
-//     // tab.innerHTML = "haha";
-
-//     //color all otherr tabs white
-//     var i, tabcontent, tablinks;
-//     tabcontent = document.getElementsByClassName("tabs");
-//     for (i = 0; i < tabcontent.length; i++) {
-//       tabcontent[i].style.backgroundColor = "white";
-//       tabcontent[i].style.color = "black";
-//     }
-
-    
-
-//     //set color of selected tab
-//     tab.style.backgroundColor = rgb;
-//     tab.style.color = "white";
-//     document.body.style.backgroundColor = rgb;
-    
-// }
-
-
-
-  
-
-// document.getElementById("home_tab").click();
+function setSheenPosition(xRatio, yRatio) {
+  // This creates a "distance" up to 400px each direction to offset the sheen
+  const xOffset = 1 - (xRatio - 0.5) * 800;
+  const yOffset = 1 - (yRatio - 0.5) * 800;
+  target.style.setProperty('--sheenX', `${xOffset}px`)
+  target.style.setProperty('--sheenY', `${yOffset}px`)
+}
