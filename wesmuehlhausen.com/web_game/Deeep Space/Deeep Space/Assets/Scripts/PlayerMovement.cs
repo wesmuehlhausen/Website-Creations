@@ -6,8 +6,8 @@ using System;
 public class PlayerMovement : MonoBehaviour
 {
     //variables
-    public float maxSpeed = 5f;
-    public float rotSpeed = 180f;
+    public float maxSpeed = 5;
+    public float rSpd = 5;
     public Transform myTarget;
     public float x;
     public float y;
@@ -42,26 +42,95 @@ public class PlayerMovement : MonoBehaviour
 
         //Note: Ship is shaking because it is bouncing in and out of place
 
+        //DIAGONAL ROTATIONS
+
+        //Rotate TOP-RIGHT counter-clockwise
+         if ((z >= 135 && z < 312.5) && ((y > 0) && (x > 0)))
+            z += Math.Abs(y) * rSpd;
+        //Rotate TOP-RIGHT clockwise
+        else if ((z < 135 || z > 317.5) && ((y > 0) && (x > 0)))
+            z -= Math.Abs(y) * rSpd;
+        //Rotate BOTTOM LEFT counter-clockwise
+        if ((z >= 315 || z < 132.5) && ((y < 0) && (x < 0)))
+            z += Math.Abs(y) * rSpd;
+        //Rotate BOTTOM-LEFT clockwise
+        else if ((z < 315 && z > 137.5) && ((y < 0) && (x < 0)))
+            z -= Math.Abs(y) * rSpd;
+        //Rotate TOP-LEFT counter-clockwise
+        if ((z >= 225 || z < 42.5) && ((y > 0) && (x < 0)))
+            z += Math.Abs(y) * rSpd;
+        //Rotate TOP-LEFT clockwise
+        else if ((z < 225 && z > 47.5) && ((y > 0) && (x < 0)))
+            z -= Math.Abs(y) * rSpd;
+        //Rotate BOTTOM-RIGHT counter-clockwise
+        if ((z >= 45 && z < 222.5) && ((y < 0) && (x > 0)))
+            z += Math.Abs(y) * rSpd;
+        //Rotate BOTTOM-RIGHT clockwise
+        else if ((z < 45 || z > 227.5) && ((y < 0) && (x > 0)))
+            z -= Math.Abs(y) * rSpd;
+
+        //Perfect Direction makes sure rotation doesnt overcorrect and bounce back and forth 
         //PERFECT LEFT
-        if ((z >= 89 && z <= 91) && (x < 0))
+        else if ((z >= 87.5 && z <= 92.5) && (x < 0) && (y == 0))//
             z = 90;
         //PERFECT RIGHT
-        else if((z <= 271 && z >= 269) && (x > 0))
+        else if((z <= 272.5 && z >= 267.5) && (x > 0) && (y == 0))//
             z = 270;
-        //Rotate LEFT from TOP
-        else if ((z < 89 || z > 270) && (x < 0))
-            z += Math.Abs(x);
-        //Rotate LEFT from DOWN
-        else if ((z > 91 && z <= 270) && (x < 0))
-            z -= Math.Abs(x);
-        //Rotate RIGHT from TOP
-        else if ((z < 90 || z > 270) && (x > 0))
-            z -= Math.Abs(x);
-        //Rotate RIGHT from DOWN
-        else if ((z >= 90 && z < 270) && (x > 0))
-            z += Math.Abs(x);
-       
+        //PERFECT DOWN
+        else if ((z <= 182.5 && z >= 177.5) && (y < 0) && (x == 0))//
+            z = 180;
+        //PERFECT UP
+        else if ((z <= 2.5 && z >= 357.5) && (y > 0) && (x == 0))//
+            z = 0;
+        //PERFECT TOP-RIGHT
+        else if ((z >= 312.5 && z <= 317.5) && (x > 0) && (y > 0))//
+            z = 315;
+        //PERFECT TOP-LEFT
+        else if ((z <= 42.5 && z >= 47.5) && (x < 0) && (y > 0))//
+            z = 45;
+        //PERFECT BOTTOM-RIGHT
+        else if ((z <= 222.5 && z >= 227.5) && (y < 0) && (x > 0))//
+            z = 225;
+        //PERFECT BOTTOM-LEFT
+        else if ((z <= 132.5 && z >= 137.5) && (y < 0) && (x < 0))//
+            z = 135;
 
+
+        //HORTIZONTAL ROTATIONS
+
+        //Rotate LEFT from TOP
+        else if ((z < 87.5 || z > 270) && ((x < 0) && (y == 0)))//
+            z += Math.Abs(x) * rSpd;
+        //Rotate LEFT from DOWN
+        else if ((z > 92.5 && z <= 270) && ((x < 0) && (y == 0)))//
+            z -= Math.Abs(x) * rSpd;
+        //Rotate RIGHT from TOP
+        else if ((z < 90 || z > 272.5) && ((x > 0) && (y == 0)))//
+            z -= Math.Abs(x) * rSpd;
+        //Rotate RIGHT from DOWN
+        else if ((z >= 90 && z < 267.5) && ((x > 0) && (y == 0)))//
+            z += Math.Abs(x) * rSpd;
+
+        //VERTICAL ROTATIONS
+        //Rotate UP from LEFT
+        else if ((z <= 180 && z > 2.5) && ((y > 0) && (x == 0)))//
+            z -= Math.Abs(y) * rSpd;
+        //Rotate UP from RIGHT
+        else if ((z < 357.5 && z > 180) && ((y > 0) && (x == 0)))//
+            z += Math.Abs(y) * rSpd;
+        //Rotate DOWN from LEFT
+        else if ((z >= 0 && z < 177.5) && ((y < 0) && (x == 0)))//
+            z += Math.Abs(y) * rSpd;
+        //Rotate DOWN from RIGHT
+        else if ((z < 360 && z > 182.5) && ((y < 0) && (x == 0)))//
+            z -= Math.Abs(y) * rSpd;
+
+
+
+
+
+
+        //Set the rotations
         rot = Quaternion.Euler(0, 0, z);
         transform.rotation = rot;
 
@@ -70,10 +139,10 @@ public class PlayerMovement : MonoBehaviour
 
 
         //forward and backwards
-        Vector3 pos = transform.position;
-        Vector3 velocity = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
-        pos += rot * velocity;
-        transform.position = pos;
+        //Vector3 pos = transform.position;
+        //Vector3 velocity = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
+        //pos += rot * velocity;
+        //transform.position = pos;a
     }
 
 
