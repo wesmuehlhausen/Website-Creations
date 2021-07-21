@@ -50,7 +50,18 @@ public class PlayerMovement : MonoBehaviour
     //Mouse follow style movement (#2) - M
     void playerMoveMouseFollow()
     {
+        //Rotate towards the mouse
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        transform.up = direction;
 
+        //Ship movement
+        Quaternion rot = transform.rotation;
+        Vector3 pos = transform.position;
+        Vector3 velocity = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
+        pos += rot * velocity;
+        transform.position = pos;
 
         //Check to see if controls are changed
         if (Input.GetKeyDown("j"))
