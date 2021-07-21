@@ -12,11 +12,15 @@ public class PlayerMovement : MonoBehaviour
     public float x;
     public float y;
     public float z;
+    public Sprite[] spriteArray;
+    public SpriteRenderer spriteRenderer;
+    public float control_number;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spriteRenderer.sprite = spriteArray[0];
+        control_number = 1;
     }
 
     // Update is called once per frame
@@ -25,27 +29,49 @@ public class PlayerMovement : MonoBehaviour
         playerMove();
     }
 
+
+    void playerMove() 
+    {
+        if (control_number == 1)//Joystick
+            playerMoveJoyStick();
+        else if (control_number == 2)//Mouse Follow
+            playerMoveMouseFollow();
+    }
+
+
+    void playerMoveMouseFollow()
+    {
+        //Check to see if controls are changed
+        if (Input.GetKeyDown("j"))
+            control_number = 1;
+    }
+
+
+
+
+
+
+
+
+
     //HELPER FUNCTIONS
 
-
-
-    //ship movement 
-    void playerMove()
+    //Joystick style movement (#1)
+    void playerMoveJoyStick()
     {
         //rotational
-
         Quaternion rot = transform.rotation;//get ships current rotation info in rot
         z = rot.eulerAngles.z; //get the z rotation value from that
-
+        
+        //get xy input
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
-        //Note: Ship is shaking because it is bouncing in and out of place
 
         //DIAGONAL ROTATIONS
 
         //Rotate TOP-RIGHT counter-clockwise
-         if ((z >= 135 && z < 312.5) && ((y > 0) && (x > 0)))
+        if ((z >= 135 && z < 312.5) && ((y > 0) && (x > 0)))
             z += Math.Abs(y) * rSpd;
         //Rotate TOP-RIGHT clockwise
         else if ((z < 135 || z > 317.5) && ((y > 0) && (x > 0)))
@@ -70,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
             z -= Math.Abs(y) * rSpd;
 
         //Perfect Direction makes sure rotation doesnt overcorrect and bounce back and forth 
+        
         //PERFECT LEFT
         else if ((z >= 87.5 && z <= 92.5) && (x < 0) && (y == 0))//
             z = 90;
@@ -94,7 +121,6 @@ public class PlayerMovement : MonoBehaviour
         //PERFECT BOTTOM-LEFT
         else if ((z <= 132.5 && z >= 137.5) && (y < 0) && (x < 0))//
             z = 135;
-
 
         //HORTIZONTAL ROTATIONS
 
@@ -125,25 +151,52 @@ public class PlayerMovement : MonoBehaviour
         else if ((z < 360 && z > 182.5) && ((y < 0) && (x == 0)))//
             z -= Math.Abs(y) * rSpd;
 
-
-
-
-
-
         //Set the rotations
         rot = Quaternion.Euler(0, 0, z);
         transform.rotation = rot;
 
+        //Ship Movement
+        Vector3 pos = transform.position;
 
+        //create direction vectors based on xy input
+        Vector3 velocityVertical = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
+        Vector3 velocityHorizontal = new Vector3(0, Input.GetAxis("Horizontal") * maxSpeed * Time.deltaTime,  0);
+        Vector3 velocityDiagonal = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
 
+        //ove in given direction
+        if ((x == 0) && (y > 0))
+            pos += rot * velocityVertical;
+        else if ((x == 0) && (y < 0))
+            pos -= rot * velocityVertical;
+        else if ((y == 0) && (x > 0))
+            pos += rot * velocityHorizontal;
+        else if ((y == 0) && (x < 0))
+            pos -= rot * velocityHorizontal;
+        else if ((y > 0) && (x > 0))
+            pos += rot * velocityDiagonal;
+        else if ((y > 0) && (x < 0))
+            pos += rot * velocityDiagonal;
+        else if ((y < 0) && (x > 0))
+            pos -= rot * velocityDiagonal;
+        else if ((y < 0) && (x < 0))
+            pos -= rot * velocityDiagonal;
 
+        transform.position = pos;
 
-        //forward and backwards
-        //Vector3 pos = transform.position;
-        //Vector3 velocity = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
-        //pos += rot * velocity;
-        //transform.position = pos;a
+        //Set the Skin of the Ship
+        if (Input.GetKeyDown("space"))//if pressing space, boost
+            spriteRenderer.sprite = spriteArray[2];
+        else if ((x == 0) && (y == 0))//if no input, no exhaust
+            spriteRenderer.sprite = spriteArray[0];
+        else
+            spriteRenderer.sprite = spriteArray[1];//normal exhaust
+
+        //Check to see if controls are changed
+        if (Input.GetKeyDown("m"))
+            control_number = 2;
     }
+
+
 
 
 }
