@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     //variables
     public float maxSpeed = 5;
     public float rSpd = 5;
+    public float rotationWASD = 180;
     public Transform myTarget;
     public float x;
     public float y;
@@ -36,27 +37,52 @@ public class PlayerMovement : MonoBehaviour
             playerMoveJoyStick();
         else if (control_number == 2)//Mouse Follow
             playerMoveMouseFollow();
+        else if (control_number == 3)//WASD controls
+            playerMoveKeys();
     }
-
-
-    void playerMoveMouseFollow()
-    {
-        //Check to see if controls are changed
-        if (Input.GetKeyDown("j"))
-            control_number = 1;
-    }
-
-
-
-
-
-
 
 
 
     //HELPER FUNCTIONS
 
-    //Joystick style movement (#1)
+
+
+    //Mouse follow style movement (#2) - M
+    void playerMoveMouseFollow()
+    {
+
+
+        //Check to see if controls are changed
+        if (Input.GetKeyDown("j"))
+            control_number = 1;
+        else if (Input.GetKeyDown("u"))
+            control_number = 3;
+    }
+
+    //WASD Key style movement (#3) - K
+    void playerMoveKeys()
+    {
+        //Ship Rotation
+        Quaternion rot = transform.rotation;
+        z = rot.eulerAngles.z;
+        z -= Input.GetAxis("Horizontal") * rotationWASD * Time.deltaTime;
+        rot = Quaternion.Euler(0, 0, z);
+        transform.rotation = rot;
+
+        //Ship movement
+        Vector3 pos = transform.position;
+        Vector3 velocity = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
+        pos += rot * velocity;
+        transform.position = pos;
+
+        //Check to see if controls are changed
+        if (Input.GetKeyDown("m"))
+            control_number = 2;
+        else if (Input.GetKeyDown("j"))
+            control_number = 1;
+    }
+
+    //Joystick style movement (#1) - J
     void playerMoveJoyStick()
     {
         //rotational
@@ -194,6 +220,8 @@ public class PlayerMovement : MonoBehaviour
         //Check to see if controls are changed
         if (Input.GetKeyDown("m"))
             control_number = 2;
+        else if (Input.GetKeyDown("u"))
+            control_number = 3;
     }
 
 
