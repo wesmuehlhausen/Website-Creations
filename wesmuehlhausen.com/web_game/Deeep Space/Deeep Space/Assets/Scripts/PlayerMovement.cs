@@ -56,12 +56,28 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
         transform.up = direction;
 
+        //Check for boost
+        if (Input.GetKey(KeyCode.LeftShift))
+            maxSpeed = 10;
+        else
+            maxSpeed = 5;
+
+
         //Ship movement
         Quaternion rot = transform.rotation;
         Vector3 pos = transform.position;
         Vector3 velocity = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
         pos += rot * velocity;
         transform.position = pos;
+
+        //Set the Skin of the Ship
+        y = Input.GetAxis("Vertical");
+        if (Input.GetKey(KeyCode.LeftShift))//if pressing space, boost
+            spriteRenderer.sprite = spriteArray[2];
+        else if (y > 0)
+            spriteRenderer.sprite = spriteArray[1];//normal exhaust
+        else
+            spriteRenderer.sprite = spriteArray[0];//normal exhaust
 
         //Check to see if controls are changed
         if (Input.GetKeyDown("j"))
@@ -70,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
             control_number = 3;
     }
 
-    //WASD Key style movement (#3) - K
+    //WASD Key style movement (#3) - U
     void playerMoveKeys()
     {
         //Ship Rotation
@@ -80,11 +96,31 @@ public class PlayerMovement : MonoBehaviour
         rot = Quaternion.Euler(0, 0, z);
         transform.rotation = rot;
 
+        //Check for boost
+        if (Input.GetKey(KeyCode.LeftShift))
+            maxSpeed = 10;
+        else
+            maxSpeed = 5;
+
         //Ship movement
         Vector3 pos = transform.position;
         Vector3 velocity = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
         pos += rot * velocity;
         transform.position = pos;
+
+        //Set the Skin of the Ship
+        x = Input.GetAxis("Horizontal");
+        y = Input.GetAxis("Vertical");
+        if (Input.GetKey(KeyCode.LeftShift))//if pressing space, boost
+            spriteRenderer.sprite = spriteArray[2];
+        else if (x > 0)//if turning right
+            spriteRenderer.sprite = spriteArray[4];
+        else if (x < 0)//if turning left
+            spriteRenderer.sprite = spriteArray[3];
+        else if (y > 0)
+            spriteRenderer.sprite = spriteArray[1];//normal exhaust
+        else
+            spriteRenderer.sprite = spriteArray[0];//normal exhaust
 
         //Check to see if controls are changed
         if (Input.GetKeyDown("m"))
@@ -192,6 +228,13 @@ public class PlayerMovement : MonoBehaviour
         rot = Quaternion.Euler(0, 0, z);
         transform.rotation = rot;
 
+        //Check for boost
+        if (Input.GetKey(KeyCode.LeftShift))
+            maxSpeed = 10;
+        else
+            maxSpeed = 5;
+
+
         //Ship Movement
         Vector3 pos = transform.position;
 
@@ -221,7 +264,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = pos;
 
         //Set the Skin of the Ship
-        if (Input.GetKeyDown("space"))//if pressing space, boost
+        if (Input.GetKey(KeyCode.LeftShift))//if pressing space, boost
             spriteRenderer.sprite = spriteArray[2];
         else if ((x == 0) && (y == 0))//if no input, no exhaust
             spriteRenderer.sprite = spriteArray[0];
