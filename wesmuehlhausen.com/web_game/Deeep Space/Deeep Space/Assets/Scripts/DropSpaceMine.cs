@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShooting : MonoBehaviour
+public class DropSpaceMine : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public float fireRate = 0.25f;
-    public Vector3 bulletOffset = new Vector3(0, 0.9f, 0);
+    public float fireRate = 60f;
+    public Vector3 bulletOffset = new Vector3(0, 0.0f, 0);
     float coolDownTimer = 0;//Cool down time for main blaster
 
 
