@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveForwardBullet : MonoBehaviour
 {
 
-    public float bulletSpeed = 5f;
+    public float bulletSpeed = 20f;
 
     void Update()
     {

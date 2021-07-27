@@ -6,6 +6,7 @@ public class PlayerShooting : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public float fireRate = 0.25f;
+    public Vector3 bulletOffset = new Vector3(0, 0.9f, 0);
     float coolDownTimer = 0;//Cool down time for main blaster
 
 
@@ -19,7 +20,10 @@ public class PlayerShooting : MonoBehaviour
         {
             //Shoot the bullet, then reset bullet timer
             coolDownTimer = fireRate;//Set back to 0.25
-            Instantiate(bulletPrefab, transform.position, transform.rotation);
+
+            Vector3 offset = transform.rotation * bulletOffset;
+
+            Instantiate(bulletPrefab, transform.position + offset, transform.rotation);
         }
     }
 }
