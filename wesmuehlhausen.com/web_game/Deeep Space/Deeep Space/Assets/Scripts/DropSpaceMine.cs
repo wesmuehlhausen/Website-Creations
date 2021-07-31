@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropSpaceMine : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public GameObject bombPrefab;
     public float fireRate = 60f;
     public Vector3 bulletOffset = new Vector3(0, 0.0f, 0);
     float coolDownTimer = 0;//Cool down time for main blaster
@@ -16,14 +16,14 @@ public class DropSpaceMine : MonoBehaviour
         coolDownTimer -= Time.deltaTime;//every frame, cool down time decreases
 
         //hold down the space bar to shoot
-        if (Input.GetButton("Jump") && coolDownTimer <= 0)
+        if (Input.GetKeyDown("e") && coolDownTimer <= 0)
         {
             //Shoot the bullet, then reset bullet timer
             coolDownTimer = fireRate;//Set back to 0.25
 
             Vector3 offset = transform.rotation * bulletOffset;
 
-            Instantiate(bulletPrefab, transform.position + offset, transform.rotation);
+            Instantiate(bombPrefab, transform.position + offset, transform.rotation);
         }
     }
 }
