@@ -72,12 +72,12 @@ public class PlayerMovement : MonoBehaviour
 
         //Set the Skin of the Ship
         y = Input.GetAxis("Vertical");
-        if (Input.GetKey(KeyCode.LeftShift))//if pressing space, boost
-            spriteRenderer.sprite = spriteArray[2];
-        else if (y > 0)
-            spriteRenderer.sprite = spriteArray[1];//normal exhaust
-        else
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown("w"))//if pressing space, boost
+            spriteRenderer.sprite = spriteArray[1];
+        else if(Input.GetKeyDown("w"))
             spriteRenderer.sprite = spriteArray[0];//normal exhaust
+        else
+            spriteRenderer.sprite = spriteArray[2];//idle
 
         //Check to see if controls are changed
         if (Input.GetKeyDown("j"))
@@ -111,16 +111,12 @@ public class PlayerMovement : MonoBehaviour
         //Set the Skin of the Ship
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
-        if (Input.GetKey(KeyCode.LeftShift))//if pressing space, boost
-            spriteRenderer.sprite = spriteArray[2];
-        else if (x > 0)//if turning right
-            spriteRenderer.sprite = spriteArray[4];
-        else if (x < 0)//if turning left
-            spriteRenderer.sprite = spriteArray[3];
-        else if (y > 0)
-            spriteRenderer.sprite = spriteArray[1];//normal exhaust
-        else
+        if (Input.GetKey(KeyCode.LeftShift) && (y > 0))//if pressing space, boost
+            spriteRenderer.sprite = spriteArray[1];
+        else if (Input.GetKeyDown("w"))
             spriteRenderer.sprite = spriteArray[0];//normal exhaust
+        else
+            spriteRenderer.sprite = spriteArray[2];//idle
 
         //Check to see if controls are changed
         if (Input.GetKeyDown("m"))
@@ -264,12 +260,12 @@ public class PlayerMovement : MonoBehaviour
         transform.position = pos;
 
         //Set the Skin of the Ship
-        if (Input.GetKey(KeyCode.LeftShift))//if pressing space, boost
-            spriteRenderer.sprite = spriteArray[2];
-        else if ((x == 0) && (y == 0))//if no input, no exhaust
-            spriteRenderer.sprite = spriteArray[0];
+        if (Input.GetKey(KeyCode.LeftShift) && (y != 0 || x != 0))//if pressing space, boost
+            spriteRenderer.sprite = spriteArray[1];
+        else if ((y != 0 || x != 0))
+            spriteRenderer.sprite = spriteArray[0];//normal exhaust
         else
-            spriteRenderer.sprite = spriteArray[1];//normal exhaust
+            spriteRenderer.sprite = spriteArray[2];//idle
 
         //Check to see if controls are changed
         if (Input.GetKeyDown("m"))
