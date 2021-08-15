@@ -72,9 +72,9 @@ public class PlayerMovement : MonoBehaviour
 
         //Set the Skin of the Ship
         y = Input.GetAxis("Vertical");
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown("w"))//if pressing space, boost
+        if (Input.GetKey(KeyCode.LeftShift) && (y > 0))//if pressing space, boost
             spriteRenderer.sprite = spriteArray[1];
-        else if(Input.GetKeyDown("w"))
+        else if((y > 0))
             spriteRenderer.sprite = spriteArray[0];//normal exhaust
         else
             spriteRenderer.sprite = spriteArray[2];//idle
@@ -111,9 +111,11 @@ public class PlayerMovement : MonoBehaviour
         //Set the Skin of the Ship
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
-        if (Input.GetKey(KeyCode.LeftShift) && (y > 0))//if pressing space, boost
+
+        //Set the Skin of the Ship
+        if (Input.GetKey(KeyCode.LeftShift) && (y != 0 || x != 0))//if pressing space, boost
             spriteRenderer.sprite = spriteArray[1];
-        else if (Input.GetKeyDown("w"))
+        else if ((y != 0 || x != 0))
             spriteRenderer.sprite = spriteArray[0];//normal exhaust
         else
             spriteRenderer.sprite = spriteArray[2];//idle
